@@ -1,1 +1,1 @@
-# Spacey
+# Spacy project
