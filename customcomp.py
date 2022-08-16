@@ -34,9 +34,9 @@ matcher.add("ANIMAL", subject_patterns)
 
 
 @Language.component("animal_component")
-def subject_component_function(doc):
+def animal_component_function(doc):
     matches = matcher(doc)
-    spans = [Span(doc, start, end, label="SUBJECT") for match_id, start, end in matches]
+    spans = [Span(doc, start, end, label="ANIMAL") for match_id, start, end in matches]
     doc.ents = spans
     return doc
 
