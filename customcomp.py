@@ -56,3 +56,19 @@ def subject_function(text):
 def animal_function(text):
     doc = nlp(text)
     print([(ent.text, ent.label_) for ent in doc.ents])
+            
+
+# Define getter function
+def get_has_color(span):
+    colors = ["red", "blue", "yellow", "green", "orange", "purple",
+              "black", "white", "grey", "magenta", "cyan", "indigo"]
+    return any(token.text in colors for token in span)
+
+
+# Set extension on the Span with getter
+Span.set_extension("has_color", getter=get_has_color)
+
+
+def color(text):
+    doc = nlp(text)
+    print(doc[1::]._.has_color)
