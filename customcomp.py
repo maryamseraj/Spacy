@@ -27,10 +27,10 @@ def subject_component_function(doc):
 # animal custom component
 animals = ["dog", "cat", "mouse", "horse", "bird",
            "turtle", "rabbit", "elephant", "rat"]
-animal_patterns = list(nlp.pipe(subjects))
+animal_patterns = list(nlp.pipe(animals))
 print("animal_patterns: ", animal_patterns)
 matcher = PhraseMatcher(nlp.vocab)
-matcher.add("ANIMAL", subject_patterns)
+matcher.add("ANIMAL", animal_patterns)
 
 
 @Language.component("animal_component")
