@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="/static/processed.css" rel="stylesheet">
+        <title>Processed</title>
+
+    </head>
+
+    <body>
+    <div id = "main">
+        {% if not entities %}
+            <p id="Null">No named entities found.</p>
+        {% else %}
+            <p id = "processed_text">{{entities}}</p>
+        {% endif %}
+    <p id = "length">{{length}}</p>
+    </div>
+    <div>
+        <p id = "input_text">{{form_data}}</p>
+    </div>
+    <button id = "back_button" style="vertical-align:middle" type = "submit" onclick="location.href = '/'"><span>Back</span></button>
+    </body>
+</html>
