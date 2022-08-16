@@ -5,6 +5,7 @@ from spacy.tokens import Span
 
 # Create a blank English nlp object
 nlp = spacy.blank("en")
+matcher = PhraseMatcher(nlp.vocab)
 
 
 # subject custom component
@@ -12,7 +13,6 @@ subjects = ["biology", "chemistry", "physics", "maths", "english",
             "history", "geography", "spanish", "computer science"]
 subject_patterns = list(nlp.pipe(subjects))
 print("subject_patterns: ", subject_patterns)
-matcher = PhraseMatcher(nlp.vocab)
 matcher.add("SUBJECT", subject_patterns)
 
 
@@ -29,7 +29,6 @@ animals = ["dog", "cat", "mouse", "horse", "bird",
            "turtle", "rabbit", "elephant", "rat"]
 animal_patterns = list(nlp.pipe(animals))
 print("animal_patterns: ", animal_patterns)
-matcher = PhraseMatcher(nlp.vocab)
 matcher.add("ANIMAL", animal_patterns)
 
 
