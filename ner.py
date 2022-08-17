@@ -3,7 +3,6 @@ from spacy.language import Language
 from spacy.matcher import PhraseMatcher
 from spacy.tokens import Span
 
-
 subjects = ["maths", "english", "biology", "physics", "chemistry",
             "history", "geography", "spanish", "computer science"]
 ner = spacy.load("en_core_web_sm")
